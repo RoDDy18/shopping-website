@@ -1,4 +1,4 @@
-# shopping-website
+# Shopping Website
 Simple Shopping Website Using Vue 3 and Json Server.
 
 ## Description
