@@ -1,0 +1,41 @@
+body
+{
+    background-color: white;
+}
+.side-nav
+{
+    margin-top: 55px;
+    background-color: #e2e2e2;
+    width: 15%;
+    position: fixed;
+    height: 100%;
+    padding-left: 30px;
+    padding-top: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.side-nav ul li a
+{
+    text-decoration: none;
+    transition: 0.5s;
+}
+.side-nav ul li
+{
+    list-style: none;
+    margin-bottom: 40px;
+    transition: 0.7s;
+}
+.side-nav ul li a i
+{
+    margin-left: 20px;
+    transition: 0.5s;
+}
+.side-nav ul li a:hover
+{
+  color: #2196F3;
+}
+
+.side-nav ul li a:hover i
+{
+  color: #2196F3;
+}

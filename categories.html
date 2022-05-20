@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="categories.css">
+    <link rel="stylesheet" href="products.css">
+    <script src="./frameworks/vue_3.2.33/dist/vue.global.js"></script>
+    <script src="./frameworks/jquery_3.6.0/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+          <div id="app">
+              <!-- Navbar Section -->
+            <div class="navbar" id="navBar">
+                <i class="fa fa-bars menu-icon" aria-hidden="true" id="menu-icon" onclick="togglemenu()"></i>
+                <strong class="logo" id="logo">LOGO</strong>
+                <!-- <div class="search">
+                    <input type="text" class="search-box" placeholder="Search brands, products and categories">
+                    <button><i class="fa fa-search"></i></button>
+                </div> -->
+                
+                <nav>
+                    <i class="fa fa-shopping-cart" id="cart2"></i>
+                    <ul id="menu-list1">
+                    <li id="link"><i class="fa fa-shopping-cart" id="cart" aria-hidden="true"></i> ( {{cart}} )</li>
+                    <li id="link"><a href="">Product Categories</a></li>
+                    <li id="link"><a href="">Our Services</a></li>
+                    <li id="contacts"><a href="">Contact Us</a></li>
+                    </ul> 
+
+                    <ul id="menu-list2">
+                        <li id="live-help"><a href=""><i class="fa fa-commenting"></i> Live Help</a></li>
+                        <li id="tag">My Account</li>
+                        <li><a href=""><i class="fa fa-envelope"></i> Orders</a></li>
+                        <li><a href=""><i class="fa fa-spinner"></i> Pending Review</a></li>
+                        <li><a href=""><i class="fa fa-gift"></i> Coupons</a></li>
+                        <li><a href=""><i class="fa fa-heart"></i> Saved Items</a></li>
+                        <li id="tag">Our Categories</li>
+                        <li></li>
+                    </ul> 
+                </nav>
+            </div>
+            <side-nav></side-nav>
+            <div class="product-list">
+                <product @add-to-cart="incrementCart" productname="Adidas" productdesc="Adidas canvas for sale" productimg="./images/Adidas/shoe 12.jpg" productprice="200"></product>
+                <product @add-to-cart="incrementCart" productname="Hp Laptop" productdesc="hp pc for sale 4GB RAM 500GB ROM" productimg="./images/computer/hp1.jpg" productprice="300"></product>
+                <product @add-to-cart="incrementCart" productname="PS5" productdesc="Full PS5 set for sale" productimg="./images/gaming/1-6.jpg" productprice="500"></product>
+            </div>
+          </div>
+    </div>
+
+
+
+    <script>
+        let menuList = document.getElementById("menu-list2");
+        let navBar = document.getElementById("navBar");
+       
+            menuList.style.maxWidth = "0px";
+            
+            navBar.style.color = "blue";
+        
+        function togglemenu()
+        {
+           
+            if (menuList.style.maxWidth === "0px")
+            {
+                menuList.style.maxWidth = "250px";
+                navBar.style.backgroundColor = "white";
+                document.getElementById("logo").style.color = "black";
+                document.getElementById("cart2").style.color = "black";
+                document.getElementById("menu-icon").style.color = "black";
+                menuList.style.backgroundColor = "blue";
+            }
+
+            else
+            {
+                navBar.style.backgroundColor = "Blue";
+                menuList.style.maxWidth = "0px" 
+                menuList.style.backgroundColor = "white";
+                document.getElementById("logo").style.color = "white";
+                document.getElementById("cart2").style.color = "white";
+                document.getElementById("menu-icon").style.color = "white";
+            }
+        }
+
+    </script>
+
+    <!-- Import app -->
+    <script src="./src/app.js"></script>
+    <!-- Import components -->
+    <script src="./src/components/sidenav.js"></script>
+    <script src="./src/components/product.js"></script>
+    <script>
+        app.mount("#app")
+    </script>
+    <script src="cart"></script>
+    
+</body>
+</html>
