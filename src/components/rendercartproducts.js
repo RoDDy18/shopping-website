@@ -45,11 +45,21 @@ app.component("render-cart-items", {
 
 
 const decrement = async (id)=>{
+    let url = "http://localhost:3000/products/"+id;
+    let getQuantityLength = await fetch(url);
+    let res = await getQuantityLength.json();
+    let newQuantity;
+    if(res.quantity == 1|| res.quantity == 0){
+        newQuantity == 1;
+    }else{
+        newQuantity = res.quantity - 1;
+    }
+
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     
     const raw = JSON.stringify({
-      "quantity": 1
+      "quantity": newQuantity
     });
     
     const requestOptions = {
@@ -63,11 +73,17 @@ const decrement = async (id)=>{
 }
 
 const increment = async (id)=>{
+
+    let url = "http://localhost:3000/products/"+id;
+    let getQuantityLength = await fetch(url);
+    let res = await getQuantityLength.json();
+    let newQuantity = res.quantity + 1;
+
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     
     const raw = JSON.stringify({
-      "quantity": 2
+      "quantity": newQuantity
     });
     
     const requestOptions = {
