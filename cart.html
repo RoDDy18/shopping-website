@@ -6,52 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="categories.css">
     <link rel="stylesheet" href="products.css">
     <script src="./frameworks/vue_3.2.33/dist/vue.global.js"></script>
     <script src="./frameworks/jquery_3.6.0/jquery-3.6.0.min.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        
-          <div id="app">
-              <!-- Navbar Section -->
-            <div class="navbar" id="navBar">
-                <i class="fa fa-bars menu-icon" aria-hidden="true" id="menu-icon" onclick="togglemenu()"></i>
-                <strong class="logo" id="logo">LOGO</strong>
-                <!-- <div class="search">
-                    <input type="text" class="search-box" placeholder="Search brands, products and categories">
-                    <button><i class="fa fa-search"></i></button>
-                </div> -->
-                
-                <nav>
-                    <i class="fa fa-shopping-cart" id="cart2"></i>
-                    <ul id="menu-list1">
-                    <li id="link"><i class="fa fa-shopping-cart" id="cart" aria-hidden="true"></i> ( {{cart}} )</li>
-                    <li id="link"><a href="">Product Categories</a></li>
-                    <li id="link"><a href="">Our Services</a></li>
-                    <li id="contacts"><a href="">Contact Us</a></li>
-                    </ul> 
+    <div id="app">
+        <!-- Navbar Section -->
+        <div class="navbar-home" id="navBar">
+            <i class="fa fa-bars menu-icon" aria-hidden="true" id="menu-icon" onclick="togglemenu()"></i>
+            <strong class="logo" id="logo">LOGO</strong>
+            <!-- <div class="search">
+                <input type="text" class="search-box" placeholder="Search brands, products and categories">
+                <button><i class="fa fa-search"></i></button>
+            </div> -->
+            
+            <nav>
+                <i class="fa fa-shopping-cart" id="cart2"></i>
+                <ul id="menu-list1">
+                <li id="link"><a href="">Products</a></li>
+                <li id="link"><a href="">About</a></li>
+                <li id="contacts"><a href="">Contacts</a></li>
+                </ul> 
 
-                    <ul id="menu-list2">
-                        <li id="live-help"><a href=""><i class="fa fa-commenting"></i> Live Help</a></li>
-                        <li id="tag">My Account</li>
-                        <li><a href=""><i class="fa fa-envelope"></i> Orders</a></li>
-                        <li><a href=""><i class="fa fa-spinner"></i> Pending Review</a></li>
-                        <li><a href=""><i class="fa fa-gift"></i> Coupons</a></li>
-                        <li><a href=""><i class="fa fa-heart"></i> Saved Items</a></li>
-                        <li id="tag">Our Categories</li>
-                        <li></li>
-                    </ul> 
-                </nav>
-            </div>
-            <!--cart stuff-->
-          </div>
+                <ul id="menu-list2">
+                    <li id="live-help"><a href=""><i class="fa fa-commenting"></i> Live Help</a></li>
+                    <li id="tag">My Account</li>
+                    <li><a href=""><i class="fa fa-envelope"></i> Orders</a></li>
+                    <li><a href=""><i class="fa fa-spinner"></i> Pending Review</a></li>
+                    <li><a href=""><i class="fa fa-gift"></i> Coupons</a></li>
+                    <li><a href=""><i class="fa fa-heart"></i> Saved Items</a></li>
+                    <li id="tag">Our Categories</li>
+                    <li></li>
+                </ul> 
+
+            </nav>
+        </div>
+        <h1 class="cart">Cart <i class="fa fa-shopping-cart"></i><div class="cart-circle"><div class="cart-circle-num">{{cart}}</div></div></h1>
+        <!--<cart-product productname="Adidas Canvas" productprice="200" productimg="./images/Adidas/shoe 12.jpg"></cart-product>
+        <cart-product productname="PlayStation 5" productprice="500" productimg="./images/gaming/1-6.jpg"></cart-product>-->
+        <render-cart-items></render-cart-items>
     </div>
-
-
-
     <script>
         let menuList = document.getElementById("menu-list2");
         let navBar = document.getElementById("navBar");
@@ -89,6 +85,8 @@
     <!-- Import app -->
     <script src="./src/app.js"></script>
     <!-- Import components -->
+    <script src="./src/components/cartproduct.js"></script>
+    <script src="./src/components/rendercartproducts.js"></script>
     <script>
         app.mount("#app")
     </script>

@@ -5,10 +5,8 @@ app.component("product", {
             <img v-bind:src="this.img" alt="" class="productImg">
             <h1>{{name}}</h1>
             <h2 class="price">$ {{price}}</h2>
-            <p>{{description}}</p>
-            <h4 class="quanity">Quanity: {{quanity}}</h4>
-            <input type="text" placeholder="Product Quanity" v-model="quanity"><br>
-            <input type="submit" value="Buy" @click.prevent="addToCart">
+            <p>{{description}}</p><br>
+            <input type="submit" value="Add To Cart" @click.prevent="addToCart(this.name,this.img,this.price)">
         </div> 
     `,
     data: ()=>{
@@ -45,8 +43,13 @@ app.component("product", {
         this.price = this.productprice;
     },
     methods:{
-        addToCart(){
-            this.$emit("add-to-cart")
+        addToCart(name, img, price){
+            let product = {
+                name: name,
+                img: img,
+                price: price
+            }
+            this.$emit("add-to-cart", product);
         }
     }
 })
