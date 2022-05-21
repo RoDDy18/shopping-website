@@ -107,6 +107,11 @@
     font-size: 20px;
 }
 
+.cart-remove:hover{
+    background-color: #1c78c4;
+    cursor: pointer;
+}
+
 .cart-quantity{
     width: 40px;
     height: 40px;
@@ -119,6 +124,7 @@
 
 .cart-quantity:hover{
     background-color: #1c78c4;
+    cursor: pointer;
 }
 
 .cart-quantity-num{
@@ -158,4 +164,14 @@
     font-size: 20px;
     display: block;
     margin: auto;
+}
+
+.render-default{
+    text-align: center;
+    margin-top: 200px;
+}
+
+.render-default p{
+    color: #c7c7c7;
+    font-size: 20px;
 }

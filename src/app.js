@@ -10,7 +10,8 @@ const app = Vue.createApp({
             let doc = {
                 productName:product.name,
                 price:product.price,
-                path:product.img
+                path:product.img,
+                quantity:1
             };
             await fetch("http://localhost:3000/products", {
                 method:"POST",
