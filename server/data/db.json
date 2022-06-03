@@ -1,18 +1,4 @@
 {
   "products": [
-    {
-      "productName": "Adidas",
-      "price": "200",
-      "path": "./images/Adidas/shoe 12.jpg",
-      "quantity": 3,
-      "id": 2
-    },
-    {
-      "productName": "PS5",
-      "price": "500",
-      "path": "./images/gaming/1-6.jpg",
-      "quantity": 2,
-      "id": 3
-    }
   ]
 }
